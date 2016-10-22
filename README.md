@@ -1,6 +1,8 @@
 neobundle-vim
 ===============
 
+[![Build Status](https://travis-ci.org/suzuki-shunsuke/ansible-neobundle-vim.svg?branch=master)](https://travis-ci.org/suzuki-shunsuke/ansible-neobundle-vim)
+
 Install [neobundle.vim](https://github.com/Shougo/neobundle.vim).
 
 Requirements
