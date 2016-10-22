@@ -1,0 +1,3 @@
+---
+# defaults file for neobundle-vim
+neobundle_vim_ghq_executable: ghq
