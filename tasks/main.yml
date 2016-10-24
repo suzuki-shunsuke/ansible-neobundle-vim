@@ -1,7 +1,7 @@
 ---
 # tasks file for neobundle-vim
 - name: ghq root
-  shell: /home/vagrant/.go/bin/ghq root
+  shell: "{{ansible_env.HOME}}/.go/bin/ghq root"
   register: ghq_root
   changed_when: false
 - name: Clone neobundle
@@ -12,6 +12,13 @@
   file:
     path: "{{ansible_env.HOME}}/.vim/bundle"
     state: directory
+- name: Check ~/.vim/bundle/neobundle.vim
+  stat:
+    path: "{{ansible_env.HOME}}/.vim/bundle/neobundle.vim"
+  register: st
+- name: Back up ~/.vim/bundle/neobundle.vim
+  shell: "mv {{ansible_env.HOME}}/.vim/bundle/neobundle.vim {{ansible_env.HOME}}/.vim/bundle/neobundle.vim.{{ansible_date_time.date}}-{{ansible_date_time.hour}}-{{ansible_date_time.minute}}-{{ansible_date_time.second}}"
+  when: st.stat.exists and not st.stat.islnk
 - name: Make symbolic links
   file:
     src: "{{ghq_root.stdout}}/github.com/Shougo/neobundle.vim"

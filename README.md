@@ -8,7 +8,7 @@ Install [neobundle.vim](https://github.com/Shougo/neobundle.vim).
 Requirements
 ------------
 
-* ghq
+* [motemen/ghq](https://github.com/motemen/ghq)
 
 Role Variables
 --------------
