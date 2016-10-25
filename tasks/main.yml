@@ -7,7 +7,7 @@
 - name: Clone neobundle
   ghq:
     name: Shougo/neobundle.vim
-    executable: "{{neobundle_vim_ghq_executable}}"
+    executable: "{{ghq_executable}}"
 - name: mkdir ~/.vim/bundle
   file:
     path: "{{ansible_env.HOME}}/.vim/bundle"

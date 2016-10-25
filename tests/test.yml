@@ -3,4 +3,4 @@
 - hosts: default
   roles:
   - role: ansible-neobundle-vim
-    neobundle_vim_ghq_executable: "{{ansible_env.HOME}}/.go/bin/ghq"
+    ghq_executable: "{{ansible_env.HOME}}/.go/bin/ghq"
